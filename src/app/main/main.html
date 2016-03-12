@@ -20,7 +20,8 @@
 
     <div class="techs" layout-align="center">
       <md-card ng-repeat="storeItem in main.storeItems">
-        <md-card-content>
+        <md-card-content ng-click="main.goToProductDetails(storeItem.pid)">
+        <!-- <md-card-content ui-sref="product({pid: storeItem.pid})"> -->
           <img class="pull-right" ng-src="{{storeItem.image}}" alt="{{ storeItem.title }}">
           <h3 class="md-title" ng-bind-html="storeItem.display">{{ storeItem.display }}</h3>
           <!-- <p>{{ storeItem.description }}</p> -->

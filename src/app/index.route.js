@@ -8,13 +8,19 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       controllerAs: 'main'
     })
     .state('product', {
-    	// url: '/product/:productName',
-      url: '/product',
+    	url: '/product',
+      // params: {
+      //   pid: {
+      //     value: 'defaultValue',
+      //     squash: false
+      //   }
+      // },
     	templateUrl: 'app/product-details/product-details.html',
     	controller: 'ProductDetailsController',
     	controllerAs: 'product'
       // resolve: {
-      //   productDetails: (StoreItem, $stateParams) => StoreItem.getItem($stateParams.productName)
+      //   // productDetails: (StoreItem, $stateParams) => StoreItem.getItem($stateParams.productName)
+      //   productDetails: (StoreItem, $stateParams) => console.log('hit inside router')
       // }
     });
 

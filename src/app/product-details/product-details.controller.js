@@ -2,6 +2,7 @@ export class ProductDetailsController {
   constructor () {
     'ngInject';
     this.data = 'hello world';
+    // console.log('productDetails', productDetails);
      
     // this.awesomeThings = [];
     // this.classAnimation = '';
