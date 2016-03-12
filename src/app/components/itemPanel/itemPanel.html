@@ -1,0 +1,12 @@
+
+<div>
+  <md-card-content ng-click="vm.goToProductDetails(vm.pid)">
+  <!-- <md-card-content ui-sref="product({pid: storeItem.pid})"> -->
+    <img class="pull-right" ng-src="{{vm.image}}" alt="{{ vm.title }}">
+    <h3 class="md-title" ng-bind-html="vm.display">{{ storeItem.display }}</h3>
+  <!-- <p>{{ storeItem.description }}</p> -->
+  </md-card-content>
+  <div class="md-action-buttons">
+  <!-- <md-button ng-href="{{ awesomeThing.url }}">Website</md-button> -->
+  </div>
+</div>
