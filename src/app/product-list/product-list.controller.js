@@ -1,14 +1,15 @@
-export class MainController {
+export class ProductListController {
   constructor ($timeout, webDevTec, toastr, storeItem, $state) {
     'ngInject';
 
-    this.awesomeThings = [];
-    this.classAnimation = '';
-    this.creationDate = 1457757557997;
-    this.toastr = toastr;
+    // this.awesomeThings = [];
+    // this.classAnimation = '';
+    // this.creationDate = 1457757557997;
+    // this.toastr = toastr;
     this.state = $state;
 
     this.storeItems = storeItem.getItems().items;
+    console.log('this.storeItems', this.storeItems);
 
     this.activate($timeout, webDevTec);
   }
@@ -36,7 +37,7 @@ export class MainController {
   goToProductDetails(pid) {
     console.log('hit', pid);
     // console.log('this.state.go', this.state.go);
-    this.state.go('product', {pid: pid});
+    this.state.go('home.product', {pid: pid});
     // this.state.go();
   }
 }

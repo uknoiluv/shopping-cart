@@ -3,12 +3,19 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
+      abstract: true,
       templateUrl: 'app/main/main.html',
       controller: 'MainController',
       controllerAs: 'main'
     })
-    .state('product', {
-    	url: '/product',
+    .state('home.list', {
+      url: 'list',
+      templateUrl: 'app/product-list/product-list.html',
+      controller: 'ProductListController',
+      controllerAs: 'list'
+    })
+    .state('home.product', {
+    	url: 'product/:pid',
       // params: {
       //   pid: {
       //     value: 'defaultValue',
@@ -19,10 +26,11 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
     	controller: 'ProductDetailsController',
     	controllerAs: 'product'
       // resolve: {
-      //   // productDetails: (StoreItem, $stateParams) => StoreItem.getItem($stateParams.productName)
+      // // productDetails: (StoreItem, $stateParams) => StoreItem.getItem($stateParams.productName)
       //   productDetails: (StoreItem, $stateParams) => console.log('hit inside router')
       // }
     });
 
+  $urlRouterProvider.when('/', 'list')
   $urlRouterProvider.otherwise('/');
 }

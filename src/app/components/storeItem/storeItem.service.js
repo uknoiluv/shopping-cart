@@ -164,6 +164,16 @@ export class StoreItemService {
       }
       ]
     };
+
+    this.indexObj = this.createIndexObj();
+  }
+
+  createIndexObj() {
+    let obj = {};
+    this.data.items.forEach( (element, i) => {
+      obj[element.pid] = i; 
+    });
+    return obj;
   }
 
   getItems() {
@@ -171,6 +181,7 @@ export class StoreItemService {
   }
 
   getItem(name) {
-    console.log('name', name);
+    let index = this.indexObj[name]
+    return this.data.items[index];
   }
 }

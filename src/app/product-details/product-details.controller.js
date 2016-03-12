@@ -1,8 +1,9 @@
 export class ProductDetailsController {
-  constructor () {
+  constructor ($stateParams, storeItem) {
     'ngInject';
     this.data = 'hello world';
-    // console.log('productDetails', productDetails);
+
+    this.item = storeItem.getItem($stateParams.pid);
      
     // this.awesomeThings = [];
     // this.classAnimation = '';

@@ -1,0 +1,13 @@
+<div class="techs" layout-align="center">
+  <md-card ng-repeat="storeItem in list.storeItems">
+    <md-card-content ng-click="list.goToProductDetails(storeItem.pid)">
+    <!-- <md-card-content ui-sref="product({pid: storeItem.pid})"> -->
+      <img class="pull-right" ng-src="{{storeItem.image}}" alt="{{ storeItem.title }}">
+      <h3 class="md-title" ng-bind-html="storeItem.display">{{ storeItem.display }}</h3>
+    <!-- <p>{{ storeItem.description }}</p> -->
+    </md-card-content>
+    <div class="md-action-buttons">
+    <!-- <md-button ng-href="{{ awesomeThing.url }}">Website</md-button> -->
+    </div>
+  </md-card>
+</div>

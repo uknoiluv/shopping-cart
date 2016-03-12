@@ -5,32 +5,19 @@
       <acme-navbar creation-date="main.creationDate"></acme-navbar>
     </header>
     
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
-        </div>
-      </md-card>
-    </div>
-
-    <div class="techs" layout-align="center">
+<!--     <div class="techs" layout-align="center">
       <md-card ng-repeat="storeItem in main.storeItems">
         <md-card-content ng-click="main.goToProductDetails(storeItem.pid)">
-        <!-- <md-card-content ui-sref="product({pid: storeItem.pid})"> -->
           <img class="pull-right" ng-src="{{storeItem.image}}" alt="{{ storeItem.title }}">
           <h3 class="md-title" ng-bind-html="storeItem.display">{{ storeItem.display }}</h3>
-          <!-- <p>{{ storeItem.description }}</p> -->
         </md-card-content>
         <div class="md-action-buttons">
-          <!-- <md-button ng-href="{{ awesomeThing.url }}">Website</md-button> -->
         </div>
       </md-card>
-    </div>
+    </div> -->
+    <div ui-view></div>
   </md-content>
+
+
 
 </div>
