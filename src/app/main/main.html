@@ -4,19 +4,7 @@
     <header>
       <acme-navbar creation-date="main.creationDate"></acme-navbar>
     </header>
-
-    <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-      </p>
-      <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-      </p>
-    </section>
-
+    
     <div class="techs" layout-align="center">
       <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
         <md-card-content>
@@ -26,6 +14,19 @@
         </md-card-content>
         <div class="md-action-buttons">
           <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+        </div>
+      </md-card>
+    </div>
+
+    <div class="techs" layout-align="center">
+      <md-card ng-repeat="storeItem in main.storeItems">
+        <md-card-content>
+          <img class="pull-right" ng-src="{{storeItem.image}}" alt="{{ storeItem.title }}">
+          <h3 class="md-title" ng-bind-html="storeItem.display">{{ storeItem.display }}</h3>
+          <!-- <p>{{ storeItem.description }}</p> -->
+        </md-card-content>
+        <div class="md-action-buttons">
+          <!-- <md-button ng-href="{{ awesomeThing.url }}">Website</md-button> -->
         </div>
       </md-card>
     </div>
