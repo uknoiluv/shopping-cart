@@ -6,10 +6,13 @@
       <md-card>
         <md-card-content>        
             <img class="productDetails-img" ng-src="{{product.item.image}}">
-            <h3 class="md-title" ng-bind-html="product.item.display"></h3>
+            <div class="md-title" ng-bind-html="product.item.display"></div>
+            <p>{{product.item.description.full}}</p>
+            <div class="productDetails-price">{{product.item.price}}</div>
+
         </md-card-content>
         <div class="md-action-buttons">      
-            <md-button ng-click="product.addToCart(product.item.display, product.item.quantity, product.item.priceValue)">{{product.item.description.action}}</md-button>
+            <md-button class="productDetails-button" ng-click="product.addToCart(product.item.display, product.item.quantity, product.item.priceValue)">{{product.item.description.action}}</md-button>
         </div>
         
       </md-card>
