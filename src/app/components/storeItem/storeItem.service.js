@@ -18,7 +18,8 @@ export class StoreItemService {
       "image": "https://intuitmarket.intuit.com/ui/images/CC_Image_page_vouchercheck.jpg",
       "display": "Voucher Checks",
       "description": {
-        "summary": "These QuickBooks-compatible checks are ideal for payroll and accounts payable. Print easily via inkjet or laser.",
+        "summary": "These QuickBooks-compatible checks are ideal for payroll and accounts payable.",
+        "full": "These QuickBooks-compatible checks are ideal for payroll and accounts payable. Print easily via inkjet or laser.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -35,7 +36,8 @@ export class StoreItemService {
       "image": "https://intuitmarket.intuit.com/ui/images/CC_Image_page_standardcheck.jpg",
       "display": "Standard Checks",
       "description": {
-        "summary": "Save time by printing three personalized checks per page. Buy a form leader to help align the check with your printer when you've used a check or two.",
+        "summary": "Save time by printing three personalized checks per page.",
+        "full": "Save time by printing three personalized checks per page. Buy a form leader to help align the check with your printer when you've used a check or two.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -52,7 +54,8 @@ export class StoreItemService {
       "image": "https://intuitmarket.intuit.com/ui/images/CC_Image_page_vouchercheck2.jpg",
       "display": "Customer trust Secure Plus",
       "description": {
-        "summary": "5% of revenue is lost to fraud each year with a median loss of $140,000. Secure Plus Voucher Checks can reduce your risk of check fraud.",
+        "summary": "5% of revenue is lost to fraud each year with a median loss of $140,000.",
+        "full": "5% of revenue is lost to fraud each year with a median loss of $140,000. Secure Plus Voucher Checks can reduce your risk of check fraud.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -70,6 +73,7 @@ export class StoreItemService {
       "display": "Wallet Checks",
       "description": {
         "summary": "These smaller printer checks also have check stubs for your record-keeping convenience.",
+        "full": "These smaller printer checks also have check stubs for your record-keeping convenience.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -87,6 +91,7 @@ export class StoreItemService {
       "display": "Manual Checks",
       "description": {
         "summary": "These 3-to-a-page manual checks have detachable check stubs which make it easy to record transaction details in QuickBooks.",
+        "full": "These 3-to-a-page manual checks have detachable check stubs which make it easy to record transaction details in QuickBooks.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -104,6 +109,7 @@ export class StoreItemService {
       "display": "Office and Away Checks",
       "description": {
         "summary": "Versatile checks that you can print in your office directly from QuickBooks or hand-write when you're away.",
+        "full": "Versatile checks that you can print in your office directly from QuickBooks or hand-write when you're away.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -121,6 +127,7 @@ export class StoreItemService {
       "display": "Secure Plus Personal Checks",
       "description": {
         "summary": "Checkout these personal checks that protect! Chemically reactive paper helps prevent check alterations. Printed at a U.S. Treasury-approved facility.",
+        "full": "Checkout these personal checks that protect! Chemically reactive paper helps prevent check alterations. Printed at a U.S. Treasury-approved facility.",
         "action": "Buy and download now"
       },
       "attributes": {
@@ -129,8 +136,7 @@ export class StoreItemService {
       }
     }
   ]
-}
-;
+};
 
     this.indexObj = this.createIndexObj();
   }
