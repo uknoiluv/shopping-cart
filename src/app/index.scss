@@ -76,15 +76,19 @@ section.jumbotron {
   }
 }
 
-.techs {
+.products {
   display: flex;
   flex-flow: row wrap;
 
   md-card {
-    width: 30%;
+    width: 40%;
 
     img.pull-right {
       float: right;
+      width: 100px;
+    }
+    img.pull-left {
+      float: left;
       width: 100px;
     }
   }
