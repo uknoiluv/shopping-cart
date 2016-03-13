@@ -12,7 +12,7 @@ import { StoreItemService } from '../app/components/storeItem/storeItem.service'
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize'])
+angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize', 'LocalStorageModule'])
   .constant('malarkey', malarkey)
   .constant('moment', moment)
   .config(config)

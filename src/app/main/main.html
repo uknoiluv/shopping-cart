@@ -14,12 +14,25 @@
       <h1 class="md-toolbar-tools">Sidenav Right</h1>
     </md-toolbar>
     <md-content layout-padding="">
-      <form>
+
+      
+
+      <md-list-item ng-repeat="item in main.cart" layout="row">
+        <div flex="60">{{item.name}}</div>
+        
+        <md-input-container flex="20" class="md-block">
+          <label>Quantity</label>        
+          <input ng-model="item.quantity" type="number" step="1">
+        </md-input-container>
+
+        <div flex="20">{{item.pricevalue}}</div>            
+      </md-list-item>
+<!--       <form>
         <md-input-container>
           <label for="testInput">Test input</label>
           <input type="text" id="testInput" ng-model="data" md-autofocus="">
         </md-input-container>
-      </form>
+      </form> -->
       <md-button ng-click="main.closeSidenav()" class="md-primary">
         Close Sidenav Right
       </md-button>

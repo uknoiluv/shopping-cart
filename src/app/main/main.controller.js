@@ -1,17 +1,36 @@
 export class MainController {
-  constructor ($timeout, webDevTec, toastr, storeItem, $state, $mdSidenav) {
+  constructor ($timeout, webDevTec, toastr, storeItem, $state, $mdSidenav, $scope, localStorageService) {
     'ngInject';
-
     this.awesomeThings = [];
     this.classAnimation = '';
     this.creationDate = 1457757557997;
     this.toastr = toastr;
     this.state = $state;
     this.mdSidenav = $mdSidenav;
+    this.localStorageService = localStorageService;
 
     this.storeItems = storeItem.getItems().items;
 
     this.activate($timeout, webDevTec);
+
+    this.cart = [];
+
+    $scope.$watch(() => {
+      return $mdSidenav('right').isOpen();
+    }, (oldValue, newValue) => {
+      console.log('this', this);
+      if(!oldValue && !newValue) {
+         this.cart = this.localStorageService.get('cart');
+      }else if(oldValue && !newValue) {
+         this.cart = this.localStorageService.get('cart');
+      }else {
+         this.localStorageService.set('cart', this.cart);
+      }
+      console.log('oldValue', oldValue);
+      console.log('newValue', newValue);
+      console.log('this.cart', this.cart);
+      // $scope.$apply();
+    });
   }
 
   activate($timeout, webDevTec) {
