@@ -11,21 +11,27 @@
   <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
     <md-toolbar class="md-theme-light">
-      <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      <h1 class="md-toolbar-tools">Cart</h1>
     </md-toolbar>
     <md-content layout-padding="">
 
-      
+
 
       <md-list-item ng-repeat="item in main.cart" layout="row">
         <div flex="60">{{item.name}}</div>
         
         <md-input-container flex="20" class="md-block">
           <label>Quantity</label>        
-          <input ng-model="item.quantity" type="number" step="1">
+          <input ng-model="item.quantity" type="number" min="1" step="1">
         </md-input-container>
 
         <div flex="20">{{item.pricevalue}}</div>            
+        <md-button ng-click="main.deleteItem($index)"> Delete </md-button>
+      </md-list-item>
+        <div layout-align="end center" layout="row">
+          <div flex="40">Total : {{main.getTotal()}}</div>
+        </div>
+      <md-list-item>
       </md-list-item>
 <!--       <form>
         <md-input-container>
@@ -33,8 +39,10 @@
           <input type="text" id="testInput" ng-model="data" md-autofocus="">
         </md-input-container>
       </form> -->
+      
+
       <md-button ng-click="main.closeSidenav()" class="md-primary">
-        Close Sidenav Right
+        Close Cart
       </md-button>
     </md-content>
 

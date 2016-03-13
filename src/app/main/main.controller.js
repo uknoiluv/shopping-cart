@@ -12,13 +12,13 @@ export class MainController {
     this.storeItems = storeItem.getItems().items;
 
     this.activate($timeout, webDevTec);
+    this.total = 0;
 
     this.cart = [];
 
     $scope.$watch(() => {
       return $mdSidenav('right').isOpen();
     }, (oldValue, newValue) => {
-      console.log('this', this);
       if(!oldValue && !newValue) {
          this.cart = this.localStorageService.get('cart');
       }else if(oldValue && !newValue) {
@@ -26,10 +26,6 @@ export class MainController {
       }else {
          this.localStorageService.set('cart', this.cart);
       }
-      console.log('oldValue', oldValue);
-      console.log('newValue', newValue);
-      console.log('this.cart', this.cart);
-      // $scope.$apply();
     });
   }
 
@@ -60,4 +56,21 @@ export class MainController {
   closeSidenav() {
     this.mdSidenav('right').close();
   }
+
+  getTotal() {
+    let total = 0;
+    
+    for(var i = 0; i < this.cart.length; i++) {
+      let item = this.cart[i];
+      total += item.pricevalue * item.quantity;
+    }
+    if(isNaN(total)) {
+      total = 'N/A'
+    }
+    return total;
+  }
+
+  // deleteItem(index) {
+  //   console.log('index', index);
+  // }
 }
