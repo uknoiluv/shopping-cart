@@ -68,7 +68,7 @@ export class MainController {
     if(isNaN(total)) {
       total = 'N/A'
     }
-    return total;
+    return Math.round(total * 100) / 100;
   }
 
   getCartTotal() {

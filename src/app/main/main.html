@@ -26,16 +26,16 @@
             <input ng-model="item.quantity" type="number" min="1" step="1">
           </md-input-container>  
 
-          <div flex="20">{{item.pricevalue}}</div>            
+          <div class="main-pricevalue" flex="20">{{item.pricevalue | currency: "$"}}</div>            
         </div>
-        <md-button flex="20">
-          <div ng-click="main.deleteItem($index)"> Delete </div>
-        </md-button>
+        <div class="main-delete">
+          <div class="main-delete-text" ng-click="main.deleteItem($index)"> Delete </div>
+        </div>
       </md-list-item>
-        <div layout-align="end center" layout="row">
-          <div flex="40">Total : {{main.getTotal()}}</div>
-        </div>
-      <md-list-item>
+        
+      <md-list-item layout-align="center center" layout="row">        
+        <div flex="60" class="main-total-text">Total : </div>              
+        <div flex="40" class="main-total-value">{{main.getTotal() | currency: "$"}}</div>        
       </md-list-item>
 <!--       <form>
         <md-input-container>
