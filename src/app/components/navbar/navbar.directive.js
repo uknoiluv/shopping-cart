@@ -4,7 +4,9 @@ export function NavbarDirective() {
   let directive = {
     restrict: 'E',
     templateUrl: 'app/components/navbar/navbar.html',
-    scope: true,
+    scope: {
+      cartCount: '='
+    },
     controller: NavbarController,
     controllerAs: 'vm',
     bindToController: true
@@ -17,6 +19,7 @@ class NavbarController {
   constructor ($mdSidenav) {
     'ngInject';    
     this.mdSidenav = $mdSidenav;
+    console.log('this.cartCount', this.cartCount);
   }
 
   toggle() {

@@ -13,6 +13,7 @@ export class MainController {
 
     this.activate($timeout, webDevTec);
     this.total = 0;
+    this.cartCount = 0;
 
     this.cart = [];
 
@@ -68,6 +69,19 @@ export class MainController {
       total = 'N/A'
     }
     return total;
+  }
+
+  getCartTotal() {
+    let total = 0;
+    
+    for(var i = 0; i < this.cart.length; i++) {
+      let item = this.cart[i];
+      total += item.quantity;
+    }
+    if(isNaN(total)) {
+      total = 'N/A'
+    }
+    return total; 
   }
 
   deleteItem(index) {
