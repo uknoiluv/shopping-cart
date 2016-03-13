@@ -1,10 +1,12 @@
 export class ProductDetailsController {
-  constructor ($stateParams, storeItem) {
+  constructor ($stateParams, storeItem, $mdSidenav) {
     'ngInject';
-    this.data = 'hello world';
+    
+    this.mdSidenav = $mdSidenav;
 
     this.item = storeItem.getItem($stateParams.pid);
-     
+    
+
     // this.awesomeThings = [];
     // this.classAnimation = '';
     // this.creationDate = 1457757557997;
@@ -15,6 +17,9 @@ export class ProductDetailsController {
     // this.activate($timeout, webDevTec);
   }
 
+  openSidenav() {
+    this.mdSidenav('right').toggle();
+  }
   // activate($timeout, webDevTec) {
   //   this.getWebDevTec(webDevTec);
   //   $timeout(() => {
