@@ -17,16 +17,20 @@
 
 
 
-      <md-list-item ng-repeat="item in main.cart" layout="row">
-        <div flex="60">{{item.name}}</div>
-        
-        <md-input-container flex="20" class="md-block">
-          <label>Quantity</label>        
-          <input ng-model="item.quantity" type="number" min="1" step="1">
-        </md-input-container>
+      <md-list-item ng-repeat="item in main.cart" layout="column">
+        <div layout="row" layout-align="center center">
+          <div flex="60">{{item.name}}</div>
+          
+          <md-input-container flex="20" class="md-block">
+            <label>Quantity</label>        
+            <input ng-model="item.quantity" type="number" min="1" step="1">
+          </md-input-container>  
 
-        <div flex="20">{{item.pricevalue}}</div>            
-        <md-button ng-click="main.deleteItem($index)"> Delete </md-button>
+          <div flex="20">{{item.pricevalue}}</div>            
+        </div>
+        <md-button flex="20">
+          <div ng-click="main.deleteItem($index)"> Delete </div>
+        </md-button>
       </md-list-item>
         <div layout-align="end center" layout="row">
           <div flex="40">Total : {{main.getTotal()}}</div>

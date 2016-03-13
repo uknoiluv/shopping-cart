@@ -70,7 +70,7 @@ export class MainController {
     return total;
   }
 
-  // deleteItem(index) {
-  //   console.log('index', index);
-  // }
+  deleteItem(index) {
+    this.cart.splice(index, 1);
+  }
 }
