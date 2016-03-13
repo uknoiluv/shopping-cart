@@ -16,19 +16,9 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
     })
     .state('home.product', {
     	url: 'product/:pid',
-      // params: {
-      //   pid: {
-      //     value: 'defaultValue',
-      //     squash: false
-      //   }
-      // },
     	templateUrl: 'app/product-details/product-details.html',
     	controller: 'ProductDetailsController',
     	controllerAs: 'product'
-      // resolve: {
-      // // productDetails: (StoreItem, $stateParams) => StoreItem.getItem($stateParams.productName)
-      //   productDetails: (StoreItem, $stateParams) => console.log('hit inside router')
-      // }
     });
 
   $urlRouterProvider.when('/', 'list')

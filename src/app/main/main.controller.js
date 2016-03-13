@@ -1,5 +1,5 @@
 export class MainController {
-  constructor ($timeout, webDevTec, toastr, storeItem, $state) {
+  constructor ($timeout, webDevTec, toastr, storeItem, $state, $mdSidenav) {
     'ngInject';
 
     this.awesomeThings = [];
@@ -7,6 +7,7 @@ export class MainController {
     this.creationDate = 1457757557997;
     this.toastr = toastr;
     this.state = $state;
+    this.mdSidenav = $mdSidenav;
 
     this.storeItems = storeItem.getItems().items;
 
@@ -34,9 +35,10 @@ export class MainController {
   }
 
   goToProductDetails(pid) {
-    console.log('hit', pid);
-    // console.log('this.state.go', this.state.go);
     this.state.go('product', {pid: pid});
-    // this.state.go();
+  }
+
+  closeSidenav() {
+    this.mdSidenav('right').close();
   }
 }

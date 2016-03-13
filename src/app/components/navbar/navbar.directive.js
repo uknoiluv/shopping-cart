@@ -4,29 +4,22 @@ export function NavbarDirective() {
   let directive = {
     restrict: 'E',
     templateUrl: 'app/components/navbar/navbar.html',
-    scope: false,
+    scope: true,
     controller: NavbarController,
-    controllerAs: 'vm'
-    // bindToController: true
+    controllerAs: 'vm',
+    bindToController: true
   };
 
   return directive;
 }
 
 class NavbarController {
-  constructor (moment, $mdSidenav) {
-    'ngInject';
-    // "this.creation" is available by directive option "bindToController: true"
-    // this.relativeDate = moment(this.creationDate).fromNow();
+  constructor ($mdSidenav) {
+    'ngInject';    
     this.mdSidenav = $mdSidenav;
-    // console.log('this', this);
-    // console.log('hit');
   }
 
   toggle() {
-    // console.log('this', this);
-    // this.toggleRight();
-    // console.log('this', this);
     this.mdSidenav('right').toggle();
   }
 }
