@@ -7,12 +7,12 @@
         <md-card-content>        
             <img class="productDetails-img" ng-src="{{product.item.image}}">
             <div class="md-title" ng-bind-html="product.item.display"></div>
-            <p>{{product.item.description.full}}</p>
-            <div class="productDetails-price">{{product.item.price}}</div>
+            <p>{{::product.item.description.full}}</p>
+            <div class="productDetails-price">{{::product.item.price}}</div>
 
         </md-card-content>
         <div class="md-action-buttons">      
-            <md-button class="productDetails-button" ng-click="product.addToCart(product.item.display, product.item.quantity, product.item.priceValue)">{{product.item.description.action}}</md-button>
+            <md-button class="productDetails-button" ng-click="product.addToCart(product.item.display, product.item.quantity, product.item.priceValue)">{{::product.item.description.action}}</md-button>
         </div>
         
       </md-card>

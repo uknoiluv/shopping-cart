@@ -10,12 +10,14 @@ export class MainController {
 
     this.cart = [];
 
+    // detect mdSidenav toggle in order to store or get data for cart
+
     $scope.$watch(() => {
       return $mdSidenav('right').isOpen();
-    }, (oldValue, newValue) => {
+    }, (newValue, oldValue) => {
       if (!oldValue && !newValue) {
          this.cart = this.localStorageService.get('cart');
-      } else if(oldValue && !newValue) {
+      } else if(newValue && !oldValue) {
          this.cart = this.localStorageService.get('cart');
       } else {
          this.localStorageService.set('cart', this.cart);

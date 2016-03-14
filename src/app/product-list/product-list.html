@@ -8,10 +8,10 @@
         <div flex= "20" class="md-title" ng-bind-html="storeItem.display">
         </div>
         <div flex="70" class="products-item-summary">
-          {{ storeItem.description.summary }}
+          {{ ::storeItem.description.summary }}
         </div>
         <div flex="10" class="products-item-price">
-          {{ storeItem.price }}
+          {{ ::storeItem.price }}
         </div>
       </div>
     </md-card-content>
