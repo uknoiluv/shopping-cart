@@ -20,11 +20,11 @@ export class MainController {
     $scope.$watch(() => {
       return $mdSidenav('right').isOpen();
     }, (oldValue, newValue) => {
-      if(!oldValue && !newValue) {
+      if (!oldValue && !newValue) {
          this.cart = this.localStorageService.get('cart');
-      }else if(oldValue && !newValue) {
+      } else if(oldValue && !newValue) {
          this.cart = this.localStorageService.get('cart');
-      }else {
+      } else {
          this.localStorageService.set('cart', this.cart);
       }
     });
@@ -60,8 +60,8 @@ export class MainController {
 
   getTotal() {
     let total = 0;
-    
-    for(var i = 0; i < this.cart.length; i++) {
+    const cartLen = this.cart ? this.cart.length : 0;
+    for(var i = 0; i < cartLen; i++) {
       let item = this.cart[i];
       total += item.pricevalue * item.quantity;
     }
@@ -73,8 +73,8 @@ export class MainController {
 
   getCartTotal() {
     let total = 0;
-    
-    for(var i = 0; i < this.cart.length; i++) {
+    const cartLen = this.cart ? this.cart.length : 0;
+    for(var i = 0; i < cartLen; i++) {
       let item = this.cart[i];
       total += item.quantity;
     }
