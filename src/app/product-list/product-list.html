@@ -1,7 +1,6 @@
-<div class="products" layout-align="center">
+<div class="products" layout-align="center center">
   <md-card ng-repeat="storeItem in list.storeItems">
     <md-card-content ng-click="list.goToProductDetails(storeItem.pid)" layout="row">
-    <!-- <md-card-content ui-sref="product({pid: storeItem.pid})"> -->
       <div flex="35" class="products-img">
         <img class="pull-left" ng-src="{{storeItem.image}}" alt="{{ storeItem.title }}" >
       </div>
@@ -15,10 +14,8 @@
           {{ storeItem.price }}
         </div>
       </div>
-    <!-- <p>{{ storeItem.description }}</p> -->
     </md-card-content>
     <div class="md-action-buttons">
-    <!-- <md-button ng-href="{{ awesomeThing.url }}">Website</md-button> -->
     </div>
   </md-card>
 </div>

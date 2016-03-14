@@ -6,11 +6,8 @@ import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { ProductDetailsController } from './product-details/product-details.controller';
 import { ProductListController } from './product-list/product-list.controller';
-import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
-import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
 import { StoreItemService } from '../app/components/storeItem/storeItem.service';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
-import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
 angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize', 'LocalStorageModule'])
   .constant('malarkey', malarkey)
@@ -18,11 +15,8 @@ angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize
   .config(config)
   .config(routerConfig)
   .run(runBlock)
-  .service('githubContributor', GithubContributorService)
-  .service('webDevTec', WebDevTecService)
   .service('storeItem', StoreItemService)
   .controller('MainController', MainController)
   .controller('ProductDetailsController', ProductDetailsController)
   .controller('ProductListController', ProductListController)
   .directive('acmeNavbar', NavbarDirective)
-  .directive('acmeMalarkey', MalarkeyDirective);

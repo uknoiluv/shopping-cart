@@ -8,14 +8,14 @@
     <div ui-view></div>
   </md-content>
 
+  <!-- Cart implementation using md-sidenav -->
+
   <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
     <md-toolbar class="md-theme-light">
       <h1 class="md-toolbar-tools">Cart</h1>
     </md-toolbar>
     <md-content layout-padding="">
-
-
 
       <md-list-item ng-repeat="item in main.cart" layout="column">
         <div layout="row" layout-align="center center">
@@ -36,14 +36,7 @@
       <md-list-item layout-align="center center" layout="row">        
         <div flex="60" class="main-total-text">Total : </div>              
         <div flex="40" class="main-total-value">{{main.getTotal() | currency: "$"}}</div>        
-      </md-list-item>
-<!--       <form>
-        <md-input-container>
-          <label for="testInput">Test input</label>
-          <input type="text" id="testInput" ng-model="data" md-autofocus="">
-        </md-input-container>
-      </form> -->
-      
+      </md-list-item>      
 
       <md-button ng-click="main.closeSidenav()" class="md-primary">
         Close Cart

@@ -1,11 +1,7 @@
 <md-toolbar layout="row" layout-align="center center">
 
   <section flex layout="row" layout-align="left center">
-    <!-- <md-button href="#" class="md-raised">Home</md-button>
-    <md-button href="#" class="md-raised">About</md-button>
-    <md-button href="#" class="md-raised">Contact</md-button> -->
     <md-button ui-sref="home.list" class="md-raised">List</md-button>
-    <!-- <md-button ui-sref="home.product" class="md-raised">Product</md-button> -->
     <md-button ng-click="vm.toggle()"> 
       <i class="fa fa-shopping-cart fa-2x"></i> 
       <span class="navbar-cartCount">{{vm.cartCount}}</span>

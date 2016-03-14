@@ -1,5 +1,5 @@
 export class ProductListController {
-  constructor ($timeout, webDevTec, toastr, storeItem, $state) {
+  constructor (storeItem, $state) {
     'ngInject';
 
     this.state = $state;
