@@ -15,8 +15,7 @@ export class ProductDetailsController {
     this.mdSidenav('right').toggle();
   }
 
-  addToCart(name, quantity, pricevalue) {
-    console.log('typeof cart', this.localStorageService.get('cart'))
+  addToCart(name, quantity, pricevalue) {    
     let cart = this.localStorageService.get('cart') || [];
     let found = false;
     cart = cart.map((element) => {
