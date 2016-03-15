@@ -1,0 +1,14 @@
+<md-content layout-fill> 
+  <div layout-align="center">
+    <md-card>
+      <md-card-content>        
+          <img class="productDetails-img" ng-src="{{vm.item.image}}">
+          <div class="md-title" ng-bind-html="vm.item.display"></div>
+          <p>{{::vm.item.description.full}}</p>
+          <div class="productDetails-price">{{::vm.item.price}}</div>      </md-card-content>
+      <div class="md-action-buttons">      
+          <md-button class="productDetails-button" ng-click="vm.addToCart(vm.item.display, vm.item.quantity, vm.item.priceValue)">{{::vm.item.description.action}}</md-button>
+      </div>      
+    </md-card>
+  </div>
+</md-content>

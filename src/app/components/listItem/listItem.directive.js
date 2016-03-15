@@ -9,11 +9,8 @@ export function ListItemDirective() {
     controllerAs: 'vm',
     bindToController: true,
     link: (scope, elem) => {
-      console.log('scope', scope);
-      console.log('elem', elem);
       elem.children().css({"background-color": scope.storeItem.attributes.productColor});
-      // elem.children().css({"background-color": scope.vm.data.attributes.productColor});
-      elem.children().children().css({"color": scope.storeItem.attributes.titleColor})
+      elem.children().children().children().css({"color": scope.storeItem.attributes.titleColor})
     }
   };
 

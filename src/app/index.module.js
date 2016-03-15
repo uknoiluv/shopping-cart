@@ -10,6 +10,7 @@ import { StoreItemService } from '../app/components/storeItem/storeItem.service'
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { ListDirective } from '../app/components/list/list.directive';
 import { ListItemDirective } from '../app/components/listItem/listItem.directive';
+import { DetailsDirective } from '../app/components/Details/Details.directive';
 
 angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize', 'LocalStorageModule'])
   .constant('malarkey', malarkey)
@@ -24,3 +25,4 @@ angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize
   .directive('fsNavbar', NavbarDirective)
   .directive('fsList', ListDirective)
   .directive('fsListItem', ListItemDirective)
+  .directive('fsDetails', DetailsDirective)
