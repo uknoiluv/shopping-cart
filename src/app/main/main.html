@@ -19,14 +19,14 @@
 
       <md-list-item ng-repeat="item in main.cart" layout="column">
         <div layout="row" layout-align="center center">
-          <div flex="60">{{item.name}}</div>
+          <div flex="60">{{ ::item.name }}</div>
           
           <md-input-container flex="20" class="md-block">
             <label>Quantity</label>        
             <input ng-model="item.quantity" type="number" min="1" step="1">
           </md-input-container>  
 
-          <div class="main-pricevalue" flex="20">{{item.pricevalue | currency: "$"}}</div>            
+          <div class="main-pricevalue" flex="20">{{::item.pricevalue | currency: "$"}}</div>            
         </div>
         <div class="main-delete">
           <div class="main-delete-text" ng-click="main.deleteItem($index)"> Delete </div>

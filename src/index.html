@@ -6,6 +6,27 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+      var urlRewrite = function(url) {
+        var newUrl = window.location.href;
+
+        newUrl = '#/c/a/b/?foo=bar'
+        var hashIndex = newUrl.indexOf('#');
+        var newString = newUrl.slice(hashIndex);
+        var indexNewString = newString.indexOf('?');
+        console.log(indexNewString);
+        var firstPart = newString.slice(0, indexNewString);
+        var secondPart = newString.slice(indexNewString);
+        
+
+        console.log('firstPart.slice(2)', firstPart.slice(2));
+
+        console.log('firstPart', firstPart);
+        console.log('secondPart', secondPart);
+        console.log(newUrl);
+        return newUrl;
+      };
+    </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
