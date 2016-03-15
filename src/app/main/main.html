@@ -17,19 +17,27 @@
     </md-toolbar>
     <md-content layout-padding="">
 
-      <md-list-item ng-repeat="item in main.cart" layout="column">
-        <div layout="row" layout-align="center center">
-          <div flex="60">{{ ::item.name }}</div>
+      <md-list-item ng-repeat="item in main.cart" layout="column" class="main-row">
+        <div layout="row" layout-align="center center" layout-fill class="main-row-container">
+          <div flex="60" ng-bind-html="::item.name"> </div>
           
-          <md-input-container flex="20" class="md-block">
+          <md-input-container flex="20" class="md-block" ng-if="item.quantityEditable">
             <label>Quantity</label>        
             <input ng-model="item.quantity" type="number" min="1" step="1">
-          </md-input-container>  
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block" ng-if="!item.quantityEditable">
+            <label>Quantity</label>        
+            <input class="main-input-fixed" ng-model="::item.quantity" type="number" readonly>
+          </md-input-container>
+
+          <!-- <div class="md-block" flex="20" ng-if="!item.quantityEditable">{{::item.quantity}}</div> -->
 
           <div class="main-pricevalue" flex="20">{{::item.pricevalue | currency: "$"}}</div>            
         </div>
-        <div class="main-delete">
-          <div class="main-delete-text" ng-click="main.deleteItem($index)"> Delete </div>
+        <div class="main-delete" layout="row" layout-align="end center">
+          <div class="main-delete-quantity-fixed" ng-if="::!item.quantityEditable" flex="70"> Quantity not editable </div>
+          <div class="main-delete-text" ng-click="main.deleteItem($index)" flex="30"> Delete </div>
         </div>
       </md-list-item>
         

@@ -34,11 +34,11 @@ class DetailsController {
     this.mdSidenav('right').toggle();
   }
 
-  addToCart(name, quantity, pricevalue) {    
+  addToCart(name, quantity, pricevalue, quantityEditable) {    
     let cart = this.localStorageService.get('cart') || [];
     let found = false;
     cart = cart.map((element) => {
-      if(element.name === name) {
+      if(element.name === name && element.quantityEditable) {
         found = true;
         element.quantity += quantity;
         return element
@@ -46,7 +46,7 @@ class DetailsController {
       return element
     });
     if(!found) {
-      cart.unshift({name: name, quantity: quantity, pricevalue: pricevalue})  
+      cart.unshift({name: name, quantity: quantity, pricevalue: pricevalue, quantityEditable: quantityEditable})  
     }
     this.localStorageService.set('cart', cart);
     this.openSidenav();

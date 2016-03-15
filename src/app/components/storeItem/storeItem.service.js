@@ -2,7 +2,7 @@ export class StoreItemService {
   constructor () {
     'ngInject';
 
-    this.data = {
+  this.data = {
   "display": "Software Products",
   "attributes": {
     "titleColor": "#000000",
@@ -13,7 +13,7 @@ export class StoreItemService {
       "pid": "office-home-business-2013",
       "quantity": 1,
       "price": "$219.99",
-      "priceValue": 219,
+      "priceValue": 219.99,
       "quantityEditable": true,
       "image": "https://d8y8nchqlnmka.cloudfront.net/zf316iSbRww/WROAGUowSRw/office.png",
       "display": "Office Home &amp; Business 2013",
