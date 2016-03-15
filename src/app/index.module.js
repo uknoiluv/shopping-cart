@@ -8,6 +8,8 @@ import { ProductDetailsController } from './product-details/product-details.cont
 import { ProductListController } from './product-list/product-list.controller';
 import { StoreItemService } from '../app/components/storeItem/storeItem.service';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
+import { ListDirective } from '../app/components/list/list.directive';
+import { ListItemDirective } from '../app/components/listItem/listItem.directive';
 
 angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize', 'LocalStorageModule'])
   .constant('malarkey', malarkey)
@@ -19,4 +21,6 @@ angular.module('shoppingCart', ['ui.router', 'ngMaterial', 'toastr', 'ngSanitize
   .controller('MainController', MainController)
   .controller('ProductDetailsController', ProductDetailsController)
   .controller('ProductListController', ProductListController)
-  .directive('acmeNavbar', NavbarDirective)
+  .directive('fsNavbar', NavbarDirective)
+  .directive('fsList', ListDirective)
+  .directive('fsListItem', ListItemDirective)
