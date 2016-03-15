@@ -9,8 +9,8 @@ export function ListDirective() {
     controllerAs: 'vm',
     bindToController: true,
     link: (scope, elem) => {
-      elem.children().css({"background-color": scope.vm.data.attributes.productColor});
-      elem.children().children().css({"color": scope.vm.data.attributes.titleColor})
+      // elem.children().css({"background-color": scope.vm.data.attributes.productColor});
+      // elem.children().children().css({"color": scope.vm.data.attributes.titleColor})
     }
   };
 
