@@ -181,7 +181,8 @@ export class StoreItemService {
   }
 
   getItem(name) {
-    let index = this.indexObj[name]
+    let index = this.indexObj[name];
+    index = index || 6;
     return this.data.items[index];
   }
 

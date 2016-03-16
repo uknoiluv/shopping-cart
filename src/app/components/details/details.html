@@ -10,7 +10,14 @@
       <div class="md-action-buttons">      
         <md-button class="productDetails-button" ng-click="vm.addToCart(vm.item.display, vm.item.quantity,
          vm.item.priceValue, vm.item.quantityEditable)">{{::vm.item.description.action}}</md-button>
-      </div>      
+      </div>
+
+      <div ng-if="::vm.item.items" layout-align="start center" layout-fill>
+        <fs-list-item flex="100" ng-repeat="storeItem in vm.item.items" layout-fill> </fs-list-item>
+      </div>
+
     </md-card>
   </div>
+
+  
 </md-content>

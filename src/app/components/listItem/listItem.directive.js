@@ -22,13 +22,9 @@ class ListItemController {
     'ngInject';
 
     this.state = $state;
-    // this.data = storeItem.getItems();
-    // this.storeItems = this.data.items;
-    
   }
 
   goToProductDetails(pid) {
-    console.log('hit inside goToProductDetails');
-    this.state.go('home.product', {pid: pid});
+    this.state.go('home.product', {pid: pid});      
   }
 }

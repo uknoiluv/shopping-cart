@@ -1,9 +1,9 @@
 <md-card>
   <md-card-content ng-click="vm.goToProductDetails(storeItem.pid)" layout="row">
-    <div flex="35" class="products-img">
+    <div flex="15" class="products-img">
       <img class="pull-left" ng-src="{{storeItem.image}}" alt="{{ storeItem.title }}" >
     </div>
-    <div flex="65" layout="column" layout-align="space-between start">
+    <div flex="85" layout="column" layout-align="space-between start">
       <div flex= "20" class="md-title" ng-bind-html="storeItem.display">
       </div>
       <div flex="70" class="products-item-summary">
@@ -12,8 +12,11 @@
       <div flex="10" class="products-item-price">
         {{ ::storeItem.price }}
       </div>
-    </div>
+    </div>    
   </md-card-content>
   <div class="md-action-buttons">
+  </div>
+  <div flex="100" ng-if="::storeItem.items" layout-align="start center" layout-fill>
+    <fs-list-item flex="50" ng-repeat="storeItem in storeItem.items"> </fs-list-item>
   </div>
 </md-card>
